@@ -34,8 +34,8 @@ This repository additionally depends on the following library, which may require
 ## Getting started
 
 ### Download DCM Dataset and prepare for DanceCamAnimator
-* Download and Check the DCM dataset following [DanceCamera3D](https://github.com/Carmenw1203/DanceCamera3D-Official) and put it under the `DCM_data/` folder.
 
+* Download and Check the DCM dataset following [DanceCamera3D](https://github.com/Carmenw1203/DanceCamera3D-Official) and put it under the `DCM_data/` folder.
 * Preprocess the data by running
 
 ```.bash
@@ -49,42 +49,61 @@ bash sh/make_dcm_plusplus.sh
 ```
 
 ### Quickstart
-* Download the saved model checkpoints from [Stage1](https://drive.google.com/file/d/17ggTNO-oskjMZt6C1W6XrsYyXEtNrPxB/view?usp=sharing) and [Stage2&3](https://drive.google.com/file/d/1S4zWbjhcwQd8Lsj-NwBM2kHcd-xP3ggH/view?usp=sharing) .
+
+* Download the saved model checkpoints from [Stage1](https://drive.google.com/file/d/17ggTNO-oskjMZt6C1W6XrsYyXEtNrPxB/view?usp=sharing) and [Stage2&amp;3](https://drive.google.com/file/d/1S4zWbjhcwQd8Lsj-NwBM2kHcd-xP3ggH/view?usp=sharing) .
 * Put the downloaded checkpoints under `checkpoints` folder and rename them as `DCA_stage1.pt` and `DCA_stage2n3.pt`.
 * Generate temporal keyframe information with stage1 model by running
+
 ```.bash
 bash sh/test_stage1.sh
 ```
+
 * Generate camera movement with stage2&3 model (given temporal keyframe information from stage1)
+
 ```.bash
 bash sh/test_stage2n3.sh
 ```
+
 * Evaluate
+
 ```.bash
 bash sh/evaluate.sh
 ```
+
 #### Keyframe Temporal Control
+
 * Generate camera movement with stage2&3 model (given temporal keyframe information from ground truth)
+
 ```.bash
 bash sh/test_stage2n3_ablate_stage1_w_gt.sh
 ```
+
 #### Keyframe Spatio-Temporal Control
+
 * Generate camera movement with stage3 model (given spatio-temporal keyframe information from ground truth)
+
 ```.bash
 bash sh/test_stage3_ablate_stage1n2_w_gt.sh
 ```
+
 ### Training process
+
 * Train the stage1 by running
+
 ```.bash
 bash sh/train_stage1.sh
 ```
+
 * Train the stage2 and stage3 by running
+
 ```.bash
 bash sh/train_stage2n3.sh
 ```
 
 ### Visualization
+
 * Convert the results to `.vmd` format that can be viewed in [Saba_Viewer](https://github.com/benikabocha/saba) by running
+
 ```.bash
 python3 scripts/extend_camera_results.py --split_json DCM_data/split/long2short.json \
 --source_camera_dir output/test_DCA/etest/CameraCentric \
@@ -96,6 +115,7 @@ python3 scripts/json2vmd.py \
 --vmd_dir output/test_DCA/etest/extend_vmd/ \
 --data_type camera
 ```
+
 * Follow [Visualization of DanceCamera3D](https://github.com/Carmenw1203/DanceCamera3D-Official?tab=readme-ov-file#visualization) to get human model, as while as modify and re-compile the Saba_Viewer project.
 
 ## Development
@@ -103,12 +123,14 @@ python3 scripts/json2vmd.py \
 This is a research implementation and, in general, will not be regularly updated or maintained long after release.
 
 ## Citation
+
 If you find this work useful for your research, please cite our papers:
+
 ```.bash
 @InProceedings{wang2024dancecamanimator,
   title={DanceCamAnimator: Keyframe-Based Controllable 3D Dance Camera Synthesis},
   author={Wang, Zixuan and Li, Jiayi and Qin, Xiaoyu and Sun, Shikun and Zhou, Songtao and Jia, Jia and Luo, Jiebo},
-  booktitle={Proceedings of the 32th ACM International Conference on Multimedia},
+  booktitle={Proceedings of the 32nd ACM International Conference on Multimedia},
   pages={xxxx--xxxx},
   year={2024}
 }
