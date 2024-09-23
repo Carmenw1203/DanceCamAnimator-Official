@@ -1,0 +1,11 @@
+accelerate launch scripts/train_stage1.py --project runs_stage1/train \
+--data_path DCM++ \
+--processed_data_dir DCM++/stage1_dataset_backups/ \
+--feature_type aist \
+--wandb_pj_name DanceCamAnimator_S1 \
+--render_dir DanceCamAnimator_S1 \
+--batch_size 512  --epochs 3000 \
+--learning_rate 0.0002 \
+--save_interval 100 \
+--w_positive_loss 2.0 \
+--w_negative_loss 0.5
