@@ -1,7 +1,7 @@
 ## DanceCamAnimator &mdash; Official PyTorch implementation
 
 Code for ACM MM 2024 paper "DanceCamAnimator: Keyframe-Based Controllable 3D Dance Camera Synthesis"
-[[Paper]]() [[Project Page]](https://carmenw1203.github.io/DanceCamAnimator.github.io/) [[Video]](https://www.youtube.com/watch?v=pQa2B78fu0Y)
+[[Paper]](https://arxiv.org/abs/2409.14925) [[Project Page]](https://carmenw1203.github.io/DanceCamAnimator.github.io/) [[Video]](https://www.youtube.com/watch?v=pQa2B78fu0Y)
 
 ✨ Do not hesitate to give a star! ✨
 
